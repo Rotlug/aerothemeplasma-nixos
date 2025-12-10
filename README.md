@@ -11,3 +11,35 @@
 * Need to copy kvantum theme to the right place
 
 * Add metadata to packages
+
+* Package `desktopcontainment` widget
+
+## How to Install
+You can try out the current state of the package by writing something like this in your NixOS config:
+
+```nix
+{pkgs, ...}: let
+  aerothemeplasma = pkgs.callPackage path/to/aero {};
+in {
+  environment.systemPackages = with aerothemeplasma;
+    [
+      extra
+      aeroglassblur
+      aeroglide
+      decoration
+      login-sessions
+      smodglow
+      smodsnap-v2
+      startupfeedback
+
+      notifications
+      systemtray
+      sevenstart
+      seventasks
+      volume
+    ]
+    ++ (with pkgs; [
+      kdePackages.qtstyleplugin-kvantum
+    ]);
+}
+```
