@@ -8,8 +8,6 @@
 
 * `extras` package needs to extract the icons, cursor and sound themes (which are `.tar.gz`) instead of just copying them
 
-* Need to copy kvantum theme to the right place
-
 * Add metadata to packages
 
 * Package `desktopcontainment` widget
