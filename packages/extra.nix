@@ -46,12 +46,20 @@ stdenv.mkDerivation {
       cp -a kvantum/* $out/share/
     fi
 
-    # Icons, cursors, sounds
-    # TODO: Actually extract the files instead of
-    # just copying them
-    [ -d icons   ] && cp -a icons/*   $out/share/icons/
-    [ -d cursors ] && cp -a cursors/* $out/share/icons/
-    [ -d sounds  ] && cp -a sounds/*  $out/share/sounds/
+    # extract Windows 7 Aero.tar.gz
+    if [ -f "icons/Windows 7 Aero.tar.gz" ]; then
+      tar -xzf "icons/Windows 7 Aero.tar.gz" -C "$out/share/icons/"
+    fi
+
+    # extract aero-drop.tar.gz
+    if [ -f "cursors/aero-drop.tar.gz" ]; then
+      tar -xzf "cursors/aero-drop.tar.gz" -C "$out/share/icons/"
+    fi
+
+    # extract sounds.tar.gz
+    if [ -f "sounds/sounds.tar.gz" ]; then
+      tar -xzf "sounds/sounds.tar.gz" -C "$out/share/sounds/"
+    fi
 
     # Mimetype packages
     if [ -d mimetype ]; then

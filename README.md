@@ -3,8 +3,6 @@
 **(Still doesn't work)** This is an attempt to package the [AeroThemePlasma](https://gitgud.io/wackyideas/aerothemeplasma/) theme for Nix/NixOS.
 
 ## What still needs to be done
-* `extras` package needs to extract the icons, cursor and sound themes (which are `.tar.gz`) instead of just copying them
-
 * Package `desktopcontainment` widget
 
 * Add metadata to packages
