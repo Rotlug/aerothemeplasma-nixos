@@ -140,7 +140,7 @@
       src = baseSrc;
     };
     inherit decoration;
-    aerothemeplasma-kcmloader = callPackage ./packages/aerothemeplasma-kcmloader.nix {
+    kcmloader = callPackage ./packages/kcmloader.nix {
       inherit mkAeroThemeDerivation;
       src = baseSrc;
     };

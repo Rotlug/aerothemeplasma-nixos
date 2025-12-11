@@ -4,7 +4,7 @@
   ...
 }:
 mkAeroThemeDerivation {
-  pname = "atp-aerothemeplasma-kcmloader";
+  pname = "atp-kcmloader";
   version = "0.0.1";
 
   inherit src;
