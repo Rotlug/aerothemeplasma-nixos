@@ -17,7 +17,7 @@ stdenv.mkDerivation {
   ];
 
   installPhase = ''
-    mkdir -p $out/share/{plasma,sddm,kwin,icons,sounds,kvantum}
+    mkdir -p $out/share/{plasma,sddm,kwin,icons,sounds,Kvantum}
 
     # Plasma components
     cd plasma
@@ -39,12 +39,13 @@ stdenv.mkDerivation {
     cp -a outline             $out/share/kwin/
     cp -a tabbox              $out/share/kwin/
 
+    cd ../misc
+
     # Kvantum theme
-    if [ -d kvantum/Kvantum ]; then
-      cp -a kvantum $out/share/kvantum
+    if [ -d kvantum ]; then
+      cp -a kvantum/* $out/share/
     fi
 
-    cd ../misc
     # Icons, cursors, sounds
     # TODO: Actually extract the files instead of
     # just copying them
