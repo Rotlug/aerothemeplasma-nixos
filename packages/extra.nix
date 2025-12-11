@@ -17,16 +17,16 @@ stdenv.mkDerivation {
   ];
 
   installPhase = ''
-    mkdir -p $out/share/{plasma,sddm,kwin,icons,sounds,Kvantum}
+    mkdir -p $out/share/{plasma,sddm,kwin,icons,sounds,Kvantum,color-schemes}
 
     # Plasma components
     cd plasma
     cp -a desktoptheme        $out/share/plasma/
     cp -a look-and-feel       $out/share/plasma/
     cp -a plasmoids           $out/share/plasma/
-
     cp -a layout-templates    $out/share/plasma/
     cp -a shells              $out/share/plasma/
+    cp -r color_scheme/* $out/share/color-schemes
 
     # SDDM theme
     cp -a sddm/sddm-theme-mod                $out/share/sddm/themes/
