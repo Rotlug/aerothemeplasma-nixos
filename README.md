@@ -1,6 +1,6 @@
 # AeroThemePlasma for NixOS
 
-**(Still doesn't work)** This is an attempt to package the [AeroThemePlasma](https://gitgud.io/wackyideas/aerothemeplasma/) theme for Nix/NixOS.
+This is an attempt to package the [AeroThemePlasma](https://gitgud.io/wackyideas/aerothemeplasma/) theme for Nix/NixOS.
 
 ## What still needs to be done
 * Package `desktopcontainment` widget
@@ -12,24 +12,24 @@ You can try out the current state of the package by writing something like this 
 
 ```nix
 {pkgs, ...}: let
-  aerothemeplasma = pkgs.callPackage path/to/aero {};
+  aero = pkgs.callPackage ../../pkgs/aerothemeplasma {};
 in {
-  environment.systemPackages = with aerothemeplasma;
+  environment.systemPackages = with aero;
     [
-      extra
       aeroglassblur
       aeroglide
       decoration
+      kcmloader
       login-sessions
       smodglow
       smodsnap-v2
       startupfeedback
-
-      notifications
-      systemtray
       sevenstart
       seventasks
+      systemtray
       volume
+      notifications
+      extra
     ]
     ++ (with pkgs; [
       kdePackages.qtstyleplugin-kvantum
