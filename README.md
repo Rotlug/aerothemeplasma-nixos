@@ -2,15 +2,12 @@
 
 **(Still doesn't work)** This is an attempt to package the [AeroThemePlasma](https://gitgud.io/wackyideas/aerothemeplasma/) theme for Nix/NixOS.
 
-## What needs to be done
-
-* Currently, SevenTasks is broken because it depends on a patched version of libplasma since ~plasma 6.4, I've reached the limit of my nix knowledge so any help is welcome!
-
+## What still needs to be done
 * `extras` package needs to extract the icons, cursor and sound themes (which are `.tar.gz`) instead of just copying them
 
-* Add metadata to packages
-
 * Package `desktopcontainment` widget
+
+* Add metadata to packages
 
 ## How to Install
 You can try out the current state of the package by writing something like this in your NixOS config:

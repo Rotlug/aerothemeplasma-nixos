@@ -10,6 +10,15 @@
   callPackage,
   ...
 }: let
+  # Base source used by all packages
+  baseSrc = fetchFromGitLab {
+    domain = "gitgud.io";
+    owner = "wackyideas";
+    repo = "aerothemeplasma";
+    rev = "97506fd35e3d186442e13b8d9021bd9b41c26c22";
+    sha256 = "sha256-aeI5wiW9qXlSm/h5B21sRGCt2Azlit5WE5axeY8Sfew=";
+  };
+
   # function that is used to compile effects and widgets that are build from source
   mkAeroThemeDerivation = lib.extendMkDerivation {
     constructDrv = stdenv.mkDerivation;
@@ -100,15 +109,6 @@
           ''
           else "";
       };
-  };
-
-  # Base source used by all packages
-  baseSrc = fetchFromGitLab {
-    domain = "gitgud.io";
-    owner = "wackyideas";
-    repo = "aerothemeplasma";
-    rev = "97506fd35e3d186442e13b8d9021bd9b41c26c22";
-    sha256 = "sha256-aeI5wiW9qXlSm/h5B21sRGCt2Azlit5WE5axeY8Sfew=";
   };
 
   # Some packages depend on the output of `decorations` so

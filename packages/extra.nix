@@ -12,6 +12,10 @@ stdenv.mkDerivation {
 
   inherit src;
 
+  patches = [
+    ../patches/normal-libplasma.patch
+  ];
+
   installPhase = ''
     mkdir -p $out/share/{plasma,sddm,kwin,icons,sounds,kvantum}
 

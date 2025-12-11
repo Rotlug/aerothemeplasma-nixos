@@ -1,0 +1,28 @@
+From 1524eb69cdd179ed8c4ea304256d38c0b3762a8b Mon Sep 17 00:00:00 2001
+From: rotlug <rotlug77@gmail.com>
+Date: Thu, 11 Dec 2025 20:36:08 +0200
+Subject: [PATCH] Patch to make it work with regular libplasma
+
+---
+ .../io.gitgud.wackyideas.seventasks/contents/ui/Task.qml      | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/plasma/plasmoids/io.gitgud.wackyideas.seventasks/contents/ui/Task.qml b/plasma/plasmoids/io.gitgud.wackyideas.seventasks/contents/ui/Task.qml
+index 10a969c..0ca697d 100644
+--- a/plasma/plasmoids/io.gitgud.wackyideas.seventasks/contents/ui/Task.qml
++++ b/plasma/plasmoids/io.gitgud.wackyideas.seventasks/contents/ui/Task.qml
+@@ -30,9 +30,9 @@ PlasmaCore.ToolTipArea {
+     mainItem: showPreviews ? taskThumbnail : null
+     mainText: showPreviews ? "" : model.display
+     location: Plasmoid.location
+-    backgroundHints: showPreviews ? "StandardBackground" : "SolidBackground"
++    // backgroundHints: showPreviews ? "StandardBackground" : "SolidBackground"
+     interactive: showPreviews
+-    windowTitle: showPreviews ? "seventasks-tooltip" : ""
++    // windowTitle: showPreviews ? "seventasks-tooltip" : ""
+ 
+     onContainsMouseChanged: (containsMouse) => {
+         if(tasksRoot.toolTipOpen && !showPreviews) {
+-- 
+2.50.1
+
